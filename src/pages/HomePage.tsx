@@ -6,6 +6,8 @@ import Contact from '../components/Contact';
 export default function HomePage() {
   return (
     <>
+      <div className="bg-gray-100 px-4 py-5">
+      </div>
       <Hero />
       <Services />
       <About />
