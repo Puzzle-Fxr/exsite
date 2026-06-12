@@ -34,7 +34,7 @@ export default function Hero() {
         >
           <Sparkles size={16} className="text-azure" />
           <span className="text-sm font-medium text-silver">
-            Innovative Tech Solutions
+            We Are Excelsis!
           </span>
         </motion.div>
 

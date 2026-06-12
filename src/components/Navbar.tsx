@@ -49,9 +49,9 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-3 group">
             <img
               src="/uploads/upload_1.png"
-              alt="Excelsis Softworks"
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
-            />
+              alt="Excelsis Softworks logo"
+              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105 text-obsidian text-2xl font-bold"
+            />Excelsis Softworks
           </Link>
 
           {/* Desktop Nav */}
