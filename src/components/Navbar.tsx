@@ -1,165 +1,87 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
+import { SERVICES } from '../data/site'
 
 const navLinks = [
-  { label: 'Home', href: '/', isPage: true },
-  { label: 'Services', href: '/#services', isPage: false },
-  { label: 'Hosting', href: '/hosting', isPage: true },
-  { label: 'About', href: '/#about', isPage: false },
-  { label: 'Contact', href: '/#contact', isPage: false },
-];
+  { to: '/', label: 'Home' },
+  ...SERVICES.map((s) => ({ to: `/${s.slug}`, label: s.title })),
+]
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const location = useLocation();
-  const isHome = location.pathname === '/';
-
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleNavClick = (href: string, isPage: boolean) => {
-    setMobileOpen(false);
-    if (!isPage && isHome) {
-      const id = href.replace('/#', '');
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
+  const [open, setOpen] = useState(false)
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'glass shadow-lg shadow-slate-300/50' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src="/uploads/upload_1.png"
-              alt="Excelsis Softworks logo"
-              className="h-12 w-auto transition-transform duration-300 group-hover:scale-105 text-obsidian text-2xl font-bold"
-            />Excelsis Softworks
-          </Link>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
+        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <img src="/logo.png" alt="Excelsis Softworks" className="h-11 w-auto" />
+          <div className="hidden flex-col leading-tight sm:flex">
+            <span className="text-sm font-bold tracking-wide text-white">EXCELSIS SOFTWORKS</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-400">Tech Solutions Ltd</span>
+          </div>
+        </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) =>
-              link.isPage ? (
-                <Link
-                  key={link.href}
-                  to={link.href}
-                  className="px-4 py-2 text-sm font-medium text-silver-dark hover:text-azure transition-colors duration-300 rounded-lg hover:bg-slate-900/5"
-                >
-                  {link.label}
-                </Link>
-              ) : (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={(e) => {
-                    if (isHome) {
-                      e.preventDefault();
-                      handleNavClick(link.href, false);
-                    }
-                  }}
-                  className="px-4 py-2 text-sm font-medium text-silver-dark hover:text-azure transition-colors duration-300 rounded-lg hover:bg-slate-900/5"
-                >
-                  {link.label}
-                </a>
-              )
-            )}
+        <div className="hidden items-center gap-1 lg:flex">
+          {navLinks.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              className={({ isActive }) =>
+                `rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-cyan-500/15 text-cyan-300'
+                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                }`
+              }
+            >
+              {l.label}
+            </NavLink>
+          ))}
+          <Link
+            to="/#contact"
+            className="ml-2 rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400"
+          >
+            Contact Us
+          </Link>
+        </div>
+
+        <button
+          className="rounded-lg p-2 text-slate-200 lg:hidden"
+          onClick={() => setOpen((o) => !o)}
+          aria-label="Toggle menu"
+        >
+          {open ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </nav>
+
+      {open && (
+        <div className="border-t border-white/10 bg-slate-950/95 px-5 py-4 lg:hidden">
+          <div className="flex flex-col gap-1">
+            {navLinks.map((l) => (
+              <NavLink
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className={({ isActive }) =>
+                  `rounded-lg px-4 py-3 text-sm font-medium ${
+                    isActive ? 'bg-cyan-500/15 text-cyan-300' : 'text-slate-300 hover:bg-white/5'
+                  }`
+                }
+              >
+                {l.label}
+              </NavLink>
+            ))}
             <Link
               to="/#contact"
-              onClick={(e) => {
-                if (isHome) {
-                  e.preventDefault();
-                  handleNavClick('/#contact', false);
-                }
-              }}
-              className="ml-4 px-5 py-2.5 text-sm font-semibold text-obsidian bg-azure hover:bg-azure-light transition-all duration-300 rounded-lg"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded-lg bg-cyan-500 px-4 py-3 text-center text-sm font-semibold text-slate-950"
             >
-              Get Started
+              Contact Us
             </Link>
           </div>
-
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden p-2 text-silver-dark hover:text-azure transition-colors"
-          >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
         </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden glass border-t border-slate-900/5 overflow-hidden"
-          >
-            <div className="px-6 py-4 space-y-1">
-              {navLinks.map((link) =>
-                link.isPage ? (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={() => setMobileOpen(false)}
-                    className="block px-4 py-3 text-silver-dark hover:text-azure hover:bg-slate-900/5 rounded-lg transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => {
-                      setMobileOpen(false);
-                      if (isHome) {
-                        e.preventDefault();
-                        handleNavClick(link.href, false);
-                      }
-                    }}
-                    className="block px-4 py-3 text-silver-dark hover:text-azure hover:bg-slate-900/5 rounded-lg transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                )
-              )}
-              <Link
-                to="/#contact"
-                onClick={(e) => {
-                  setMobileOpen(false);
-                  if (isHome) {
-                    e.preventDefault();
-                    handleNavClick('/#contact', false);
-                  }
-                }}
-                className="block mt-3 px-4 py-3 text-center font-semibold text-obsidian bg-azure hover:bg-azure-light rounded-lg transition-colors"
-              >
-                Get Started
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
-  );
+      )}
+    </header>
+  )
 }
