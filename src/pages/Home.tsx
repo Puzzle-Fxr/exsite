@@ -12,6 +12,9 @@ export default function Home() {
     { src: '/images/team2.jpg', alt: 'Our team at work - Image 2' },
     { src: '/images/team3.jpg', alt: 'Our team at work - Image 3' },
     { src: '/images/team4.jpg', alt: 'Our team at work - Image 4' },
+    { src: '/images/team5.jpg', alt: 'Our team at work - Image 5' },
+    { src: '/images/team6.jpg', alt: 'Our team at work - Image 6' },
+    { src: '/images/team7.jpg', alt: 'Our team at work - Image 7' },
   ]
 
   useEffect(() => {
