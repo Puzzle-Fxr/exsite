@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Mail, Phone, Quote, Star } from 'lucide-react'
 import { COMPANY, SERVICES, TESTIMONIALS, EXECUTIVES, STATS } from '../data/site'
@@ -5,13 +6,28 @@ import ContactForm from '../components/ContactForm'
 import CTA from '../components/CTA'
 
 export default function Home() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const carouselImages = [
+    { src: '/images/team1.jpg', alt: 'Our team at work - Image 1' },
+    { src: '/images/team2.jpg', alt: 'Our team at work - Image 2' },
+    { src: '/images/team3.jpg', alt: 'Our team at work - Image 3' },
+    { src: '/images/team4.jpg', alt: 'Our team at work - Image 4' },
+  ]
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
+  }, [carouselImages.length])
+
   return (
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero.jpg" alt="" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/90 to-cyan-950/50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/60 to-cyan-950/20" />
         </div>
         <div className="relative mx-auto max-w-7xl px-5 py-24 lg:py-36">
           <div className="max-w-3xl">
@@ -76,7 +92,21 @@ export default function Home() {
           </div>
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-white/10">
-              <img src="/images/hero.jpg" alt="Our team at work" className="aspect-[4/3] w-full object-cover" />
+              <div className="relative aspect-[4/3] w-full">
+                <img src={carouselImages[currentImageIndex].src} alt={carouselImages[currentImageIndex].alt} className="h-full w-full object-cover transition-opacity duration-1000" />
+                <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentImageIndex(index)}
+                      className={`h-2 rounded-full transition ${
+                        index === currentImageIndex ? 'w-6 bg-cyan-500' : 'w-2 bg-white/50 hover:bg-white/70'
+                      }`}
+                      aria-label={`Go to image ${index + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-cyan-500/30 bg-slate-900/90 px-6 py-5 shadow-xl backdrop-blur sm:block">
               <p className="text-2xl font-bold text-cyan-400">11 yrs</p>
