@@ -249,6 +249,11 @@ export default function Home() {
             </div>
 
             <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-7">
+              <p className="mb-6 text-sm text-slate-400 text-center">If you already have a project in mind, consider filling out the form below. We will reach out to you to iron out the details.</p>
+              <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdJwGwzyP6DK2cOurzhpV5uCvSszgO-kBGj7nVi7CW-fqkZgw/viewform?usp=header" className="mx-auto block items-center-safe rounded-full bg-cyan-500 px-6 py-3 mb-3 text-sm text-center font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:scale-105 hover:bg-cyan-400">
+                Fill Out Form
+              </Link>
+              <p className="mb-6 text-sm text-slate-400 text-center">Or, you may contact us directly below and we'll get back to you within one business day.</p>
               <ContactForm />
             </div>
           </div>
@@ -259,3 +264,4 @@ export default function Home() {
     </>
   )
 }
+
