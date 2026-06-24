@@ -27,7 +27,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <img src="/images/hero.jpg" alt="" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/60 to-cyan-950/20" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/50 to-cyan-950/5" />
         </div>
         <div className="relative mx-auto max-w-7xl px-5 py-24 lg:py-36">
           <div className="max-w-3xl">
@@ -65,7 +65,7 @@ export default function Home() {
       <section id="about" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">About Us</span>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">About Us</span>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">A craft-driven studio with an enterprise backbone</h2>
             <p className="mt-5 leading-relaxed text-slate-300">
               Founded in {COMPANY.founded}, {COMPANY.name} was born from a simple conviction: world-class software
@@ -109,7 +109,7 @@ export default function Home() {
               </div>
             </div>
             <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-cyan-500/30 bg-slate-900/90 px-6 py-5 shadow-xl backdrop-blur sm:block">
-              <p className="text-2xl font-bold text-cyan-400">11 yrs</p>
+              <p className="text-2xl font-bold text-cyan-400">6 yrs</p>
               <p className="text-xs text-slate-400">of shipping software</p>
             </div>
           </div>
@@ -120,7 +120,7 @@ export default function Home() {
       <section id="services" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Our Services</span>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Our Services</span>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Everything you need to build and scale</h2>
             <p className="mt-4 text-slate-300">Four practices, one accountable team. Pick a single service or let us own the full journey.</p>
           </div>
@@ -155,7 +155,7 @@ export default function Home() {
       <section id="testimonials" className="scroll-mt-20 border-b border-white/10 bg-slate-900/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Testimonials</span>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Testimonials</span>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Trusted by teams who ship</h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
@@ -180,15 +180,15 @@ export default function Home() {
       <section id="executives" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Executives</span>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Executives</span>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Leadership that has been there</h2>
             <p className="mt-4 text-slate-300">The people accountable for your success.</p>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {EXECUTIVES.map((e) => (
               <div key={e.name} className="group rounded-3xl border border-white/10 bg-slate-900/50 p-6 text-center transition hover:border-cyan-500/40">
-                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-cyan-500 to-cyan-700 text-xl font-bold text-slate-950">
-                  {e.initials}
+                <div className="mx-auto h-80 w-80 overflow-hidden rounded-full border border-white/10 bg-slate-950/50">
+                  {e.image ? <img src={e.image} alt={e.name} /> : e.initials}
                 </div>
                 <h3 className="mt-4 font-bold text-white">{e.name}</h3>
                 <p className="text-sm font-medium text-cyan-400">{e.role}</p>
@@ -203,7 +203,7 @@ export default function Home() {
       <section id="contact" className="scroll-mt-20 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Location & Contact</span>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Location & Contact</span>
             <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Let's build something together</h2>
             <p className="mt-4 text-slate-300">Tell us about your project and we'll respond within one business day.</p>
           </div>

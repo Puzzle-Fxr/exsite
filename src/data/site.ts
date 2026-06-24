@@ -6,7 +6,7 @@ export const COMPANY = {
   tagline: 'Engineering excellence for the digital age',
   email: 'hello@excelsissoftworks.com',
   phone: '+233 (545) 473-885',
-  address: '1200 Market Street, Suite 800, San Francisco, CA 94102',
+  address: '93 Adjringanor Road, East Legon, Accra - Ghana. GD-212-3218',
   founded: 2019,
 }
 
@@ -91,33 +91,31 @@ export type Executive = {
   name: string
   role: string
   bio: string
+  image: string
   initials: string
 }
 
 export const EXECUTIVES: Executive[] = [
   {
-    name: 'Dr. Olaf Caldwell Avogo',
+    name: 'Olaf Caldwell Avogo MD',
     role: 'Chief Executive Officer',
     bio: 'A decade scaling engineering orgs. Olaf founded Excelsis to bring enterprise-grade craft to growing companies.',
-    initials: 'OA',
+    image: '/images/olaf.jpg',
+    initials: 'OA'
   },
   {
-    name: 'Sofia Marchetti',
-    role: 'Chief Technology Officer',
+    name: 'Sofia Obeng',
+    role: 'Vice President of Engineering',
     bio: 'Cloud architect and former platform lead. Sofia owns our engineering standards and technology roadmap.',
-    initials: 'SM',
+    image: '/images/sofia.jpg',
+    initials: 'SM'
   },
   {
     name: 'James Okoro',
     role: 'Chief Operating Officer',
     bio: 'Operations strategist who keeps delivery predictable. James runs our delivery, PMO and quality practices.',
-    initials: 'JO',
-  },
-  {
-    name: 'Mei Lin Tan',
-    role: 'VP of AI Solutions',
-    bio: 'ML researcher turned product builder. Mei leads our AI agent practice and applied research lab.',
-    initials: 'MT',
+    image: '/images/james.jpg',
+    initials: 'JO'
   },
 ]
 
