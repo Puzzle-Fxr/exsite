@@ -60,14 +60,14 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       'Excelsis rebuilt our customer portal in record time and our conversion rate jumped 38%. They feel like an extension of our own team.',
-    name: 'Marcus Bellweather',
+    name: 'Marcus Anane',
     role: 'VP of Digital',
     company: 'Northwind Logistics',
   },
   {
     quote:
       'The Salesforce integration they delivered eliminated three manual processes overnight. Our sales reps finally trust the data.',
-    name: 'Priya Raman',
+    name: 'Priscilla Mensah',
     role: 'Director of Revenue Operations',
     company: 'Lumen Health',
   },
@@ -81,7 +81,7 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
       'From concept to App Store in twelve weeks. Excelsis understood our vision and shipped a product our users genuinely love.',
-    name: 'Elena Vasquez',
+    name: 'Emelia Kofii',
     role: 'Founder & CEO',
     company: 'Trailmate',
   },

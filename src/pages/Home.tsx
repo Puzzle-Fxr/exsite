@@ -152,7 +152,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="border-b border-white/10 bg-slate-900/30 py-20 lg:py-28">
+      <section id="testimonials" className="scroll-mt-20 border-b border-white/10 bg-slate-900/30 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-semibold uppercase tracking-widest text-cyan-400">Testimonials</span>
@@ -213,7 +213,9 @@ export default function Home() {
               <div className="overflow-hidden rounded-3xl border border-white/10">
                 <iframe
                   title="Excelsis Softworks location"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=-122.43%2C37.77%2C-122.39%2C37.79&layer=mapnik&marker=37.78%2C-122.41"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=-0.13482660055160525%2C5.647112099015295%2C-0.13196736574172976%2C5.648780341479149&amp;layer=mapnik&amp;marker=5.647944886253705%2C-0.13339698314666748"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                   className="h-64 w-full"
                   loading="lazy"
                 />
