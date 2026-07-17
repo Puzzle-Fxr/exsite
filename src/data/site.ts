@@ -97,8 +97,8 @@ export type Executive = {
 
 export const EXECUTIVES: Executive[] = [
   {
-    name: 'Olaf Caldwell Avogo MD',
-    role: 'Chief Executive Officer',
+    name: 'Olaf Avogo MD',
+    role: 'Chief Technology Officer',
     bio: 'A decade scaling engineering orgs. Olaf founded Excelsis to bring enterprise-grade craft to growing companies.',
     image: '/images/olaf.jpg',
     initials: 'OA'
@@ -111,11 +111,11 @@ export const EXECUTIVES: Executive[] = [
     initials: 'SM'
   },
   {
-    name: 'James Okoro',
-    role: 'Chief Operating Officer',
-    bio: 'Operations strategist who keeps delivery predictable. James runs our delivery, PMO and quality practices.',
-    image: '/images/james.jpg',
-    initials: 'JO'
+    name: 'Karsten Avogo',
+    role: 'Business Development / Tech Solutions Leader',
+    bio: 'Operations strategist who keeps delivery predictable. Karsten runs our delivery, PMO and quality practices.',
+    image: '/images/karsten.jpg',
+    initials: 'KA'
   },
 ]
 
