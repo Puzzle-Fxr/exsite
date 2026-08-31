@@ -26,7 +26,7 @@ export default function ContactForm() {
     formData.delete("botcheck") 
 
     try {
-      const response = await fetch("https://formsubmit.co/excelsissoftworks@gmail.com.com", {
+      const response = await fetch("https://formsubmit.co/excelsissoftworks@gmail.com", {
         method: "POST",
         body: formData
       })
