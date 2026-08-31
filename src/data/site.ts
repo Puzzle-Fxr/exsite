@@ -2,9 +2,9 @@ import { Globe, Smartphone, Plug, Bot } from 'lucide-react'
 
 export const COMPANY = {
   name: 'Excelsis Softworks',
-  legalName: 'Excelsis Softworks – Tech Solutions Ltd',
+  legalName: 'Excelsis Softworks - Tech Solutions Ltd',
   tagline: 'Engineering excellence for the digital age',
-  email: 'hello@excelsissoftworks.com',
+  email: 'excelsissoftworks@gnail.com',
   phone: '+233 (545) 473-885',
   address: '93 Adjringanor Road, East Legon, Accra - Ghana. GD-212-3218',
   founded: 2019,

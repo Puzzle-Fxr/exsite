@@ -51,7 +51,7 @@ export default function ContactForm() {
   }
 
   const field =
-    'w-full rounded-xl border border-white/10 bg-slate-900/60 px-4 py-3 text-sm text-white placeholder-slate-500 outline-none transition focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-500/20'
+    'w-full rounded-xl border border-blue-200 bg-blue-50 px-4 py-3 text-sm text-slate-900 placeholder-slate-500 outline-none transition focus:border-cyan-400/60 focus:ring-2 focus:ring-cyan-400/20'
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
@@ -72,7 +72,7 @@ export default function ContactForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">Full name</label>
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-700">Full name</label>
           <input 
             required 
             name="name" 
@@ -83,7 +83,7 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">Email</label>
+          <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-700">Email</label>
           <input 
             required 
             type="email" 
@@ -96,7 +96,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">Company</label>
+        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-700">Company</label>
         <input 
           name="company" 
           value={form.company} 
@@ -106,7 +106,7 @@ export default function ContactForm() {
         />
       </div>
       <div>
-        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-400">How can we help?</label>
+        <label className="mb-1.5 block text-xs font-medium uppercase tracking-wider text-slate-700">How can we help?</label>
         <textarea 
           required 
           rows={5} 
@@ -120,7 +120,7 @@ export default function ContactForm() {
 
       {/* 4. ERROR DISPLAY BLOCK */}
       {errorMsg && (
-        <div className="flex items-start gap-3 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-400">
+        <div className="flex items-start gap-3 rounded-xl border border-red-300 bg-red-50 p-4 text-sm text-red-700">
           <AlertCircle size={18} className="shrink-0 mt-0.5" />
           <div>{errorMsg}</div>
         </div>
@@ -129,7 +129,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading || sent}
-        className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400 hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none"
+        className="inline-flex items-center gap-2 rounded-xl bg-cyan-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:bg-blue-700 hover:scale-[1.02] disabled:opacity-50 disabled:pointer-events-none"
       >
         {sent ? (
           <><CheckCircle2 size={18} /> Message sent</>
@@ -140,7 +140,7 @@ export default function ContactForm() {
         )}
       </button>
 
-      {sent && <p className="text-sm text-cyan-300">Thanks — we'll be in touch within one business day.</p>}
+      {sent && <p className="text-sm text-cyan-500">Thanks — we'll be in touch within one business day.</p>}
     </form>
   )
 }

@@ -39,13 +39,13 @@ export default function Navbar() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-blue-200 bg-white/80 backdrop-blur-xl shadow-sm">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-3.5">
         <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
           <img src="/logo.png" alt="Excelsis Softworks" className="h-11 w-auto" />
           <div className="hidden flex-col leading-tight sm:flex">
-            <span className="text-sm font-bold tracking-wide text-white">EXCELSIS SOFTWORKS</span>
-            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-400">Tech Solutions Ltd</span>
+            <span className="text-sm font-bold tracking-wide text-slate-900">EXCELSIS SOFTWORKS</span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-blue-600">Tech Solutions Ltd</span>
           </div>
         </Link>
 
@@ -56,7 +56,7 @@ export default function Navbar() {
               to={l.to}
               onClick={() => setOpen(false)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                isActiveLink(l.to) ? 'bg-cyan-500/15 text-cyan-300' : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                isActiveLink(l.to) ? 'bg-blue-100 text-cyan-500' : 'text-slate-700 hover:bg-blue-50 hover:text-cyan-500'
               }`}
             >
               {l.label}
@@ -64,14 +64,14 @@ export default function Navbar() {
           ))}
           <Link
             to="/#contact"
-            className="ml-2 rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:bg-cyan-400"
+            className="ml-2 rounded-full bg-cyan-500 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:bg-blue-700"
           >
             Contact Us
           </Link>
         </div>
 
         <button
-          className="rounded-lg p-2 text-slate-200 lg:hidden"
+          className="rounded-lg p-2 text-slate-700 lg:hidden"
           onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -80,7 +80,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-white/10 bg-slate-950/95 px-5 py-4 lg:hidden">
+        <div className="border-t border-blue-200 bg-blue-50/95 px-5 py-4 lg:hidden">
           <div className="flex flex-col gap-1">
             {navLinks.map((l) => (
               <Link
@@ -88,7 +88,7 @@ export default function Navbar() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className={`rounded-lg px-4 py-3 text-sm font-medium ${
-                  isActiveLink(l.to) ? 'bg-cyan-500/15 text-cyan-300' : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                  isActiveLink(l.to) ? 'bg-blue-100 text-cyan-500' : 'text-slate-700 hover:bg-blue-100 hover:text-blue-700'
                 }`}
               >
                 {l.label}
@@ -97,7 +97,7 @@ export default function Navbar() {
             <Link
               to="/#contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-lg bg-cyan-500 px-4 py-3 text-center text-sm font-semibold text-slate-950"
+              className="mt-2 rounded-lg bg-cyan-500 px-4 py-3 text-center text-sm font-semibold text-white"
             >
               Contact Us
             </Link>

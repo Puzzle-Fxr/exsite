@@ -18,7 +18,7 @@ export default function Layout() {
   }, [pathname, hash])
 
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100">
+    <div className="flex min-h-screen flex-col bg-gradient-to-b from-white via-blue-50 to-blue-100 text-slate-900">
       <Navbar />
       <main className="flex-1">
         <Outlet />

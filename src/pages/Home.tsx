@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, MapPin, Mail, Phone, Quote, Star } from 'lucide-react'
 import { COMPANY, SERVICES, TESTIMONIALS, EXECUTIVES, STATS } from '../data/site'
 import ContactForm from '../components/ContactForm'
+import PolarBearHeroBackground from "../components/PolarBearHeroBackground";
 import CTA from '../components/CTA'
 
 export default function Home() {
@@ -29,34 +30,34 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/images/hero.jpg" alt="" className="h-full w-full object-cover opacity-25" />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-950/50 to-cyan-950/5" />
+          <PolarBearHeroBackground className="z-0 opacity-95" speed={1} respectReducedMotion={false} />
+          <div className="absolute inset-0 z-10 bg-linear-to-br from-white via-cyan-40/80 to-cyan-0" />
         </div>
-        <div className="relative mx-auto max-w-7xl px-5 py-24 lg:py-36">
+        <div className="relative z-20 mx-auto max-w-7xl px-5 py-24 lg:py-36">
           <div className="max-w-3xl">
-            <span className="inline-block rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-300">
+            <span className="inline-block rounded-full border border-cyan-300 bg-cyan-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-700">
               {COMPANY.tagline}
             </span>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.1] text-white sm:text-5xl lg:text-6xl">
-              We Build, <span className="text-cyan-400"> The Future!</span>
+            <h1 className="mt-6 text-4xl font-bold leading-[1.1] text-slate-900 sm:text-5xl lg:text-6xl">
+              We Build, <span className="text-cyan-500"> The Future!</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-700">
               {COMPANY.legalName} designs, builds and integrates websites, mobile apps, enterprise systems and AI agents —
               all engineered to the same standard: reliable, scalable and a pleasure to use.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/#services" className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-7 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:scale-105 hover:bg-cyan-400">
+              <Link to="/#services" className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:scale-105 hover:bg-blue-700">
                 Explore our services <ArrowRight size={16} />
               </Link>
-              <Link to="/#contact" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-7 py-3.5 text-sm font-semibold text-white transition hover:bg-white/5">
+              <Link to="/#contact" className="inline-flex items-center gap-2 rounded-full border border-blue-300 px-7 py-3.5 text-sm font-semibold text-slate-900 transition hover:bg-blue-100">
                 Talk to us
               </Link>
             </div>
             <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 sm:grid-cols-4">
               {STATS.map((s) => (
                 <div key={s.label}>
-                  <dt className="text-3xl font-bold text-cyan-400">{s.value}</dt>
-                  <dd className="mt-1 text-xs uppercase tracking-wider text-slate-400">{s.label}</dd>
+                  <dt className="text-3xl font-bold text-cyan-500">{s.value}</dt>
+                  <dd className="mt-1 text-xs uppercase tracking-wider text-slate-600">{s.label}</dd>
                 </div>
               ))}
             </dl>
@@ -65,17 +66,17 @@ export default function Home() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
+      <section id="about" className="scroll-mt-20 border-b border-blue-200 py-20 lg:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <div>
-            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">About Us</span>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">A craft-driven studio with an enterprise backbone</h2>
-            <p className="mt-5 leading-relaxed text-slate-300">
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-500">About Us</span>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">A craft-driven studio with an enterprise backbone</h2>
+            <p className="mt-5 leading-relaxed text-slate-700">
               Founded in {COMPANY.founded}, {COMPANY.name} was born from a simple conviction: world-class software
               shouldn't be reserved for the Fortune 500. We pair the rigor of large-scale engineering with the speed
               and care of a boutique studio.
             </p>
-            <p className="mt-4 leading-relaxed text-slate-300">
+            <p className="mt-4 leading-relaxed text-slate-700">
               Our cross-functional teams of designers, engineers, integration specialists and AI researchers work as one
               unit alongside your people. We measure success not by lines shipped, but by the outcomes your business
               achieves long after launch.
@@ -86,16 +87,16 @@ export default function Home() {
                 { t: 'Built to last', d: 'Clean architecture, tested code, zero shortcuts.' },
                 { t: 'True partnership', d: 'Transparent communication, no black boxes.' },
               ].map((v) => (
-                <div key={v.t} className="rounded-2xl border border-white/10 bg-slate-900/50 p-5">
-                  <h3 className="text-sm font-semibold text-cyan-300">{v.t}</h3>
-                  <p className="mt-2 text-sm text-slate-400">{v.d}</p>
+                <div key={v.t} className="rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                  <h3 className="text-sm font-semibold text-blue-700">{v.t}</h3>
+                  <p className="mt-2 text-sm text-slate-700">{v.d}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-white/10">
-              <div className="relative aspect-[4/3] w-full">
+            <div className="overflow-hidden rounded-3xl border border-blue-200">
+              <div className="relative aspect-4/3 w-full">
                 <img src={carouselImages[currentImageIndex].src} alt={carouselImages[currentImageIndex].alt} className="h-full w-full object-cover transition-opacity duration-1000" />
                 <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
                   {carouselImages.map((_, index) => (
@@ -103,7 +104,7 @@ export default function Home() {
                       key={index}
                       onClick={() => setCurrentImageIndex(index)}
                       className={`h-2 rounded-full transition ${
-                        index === currentImageIndex ? 'w-6 bg-cyan-500' : 'w-2 bg-white/50 hover:bg-white/70'
+                        index === currentImageIndex ? 'w-6 bg-cyan-500' : 'w-2 bg-blue-200 hover:bg-blue-300'
                       }`}
                       aria-label={`Go to image ${index + 1}`}
                     />
@@ -111,40 +112,40 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-cyan-500/30 bg-slate-900/90 px-6 py-5 shadow-xl backdrop-blur sm:block">
-              <p className="text-2xl font-bold text-cyan-400">6 yrs</p>
-              <p className="text-xs text-slate-400">of shipping software</p>
+            <div className="absolute -bottom-6 -left-6 hidden rounded-2xl border border-blue-300 bg-white px-6 py-5 shadow-xl backdrop-blur sm:block">
+              <p className="text-2xl font-bold text-cyan-500">6 yrs</p>
+              <p className="text-xs text-slate-700">of shipping software</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
+      <section id="services" className="scroll-mt-20 border-b border-blue-200 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Our Services</span>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Everything you need to build and scale</h2>
-            <p className="mt-4 text-slate-300">Four practices, one accountable team. Pick a single service or let us own the full journey.</p>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-500">Our Services</span>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Everything you need to build and scale</h2>
+            <p className="mt-4 text-slate-700">Four practices, one accountable team. Pick a single service or let us own the full journey.</p>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {SERVICES.map((s) => (
               <Link
                 key={s.slug}
                 to={`/${s.slug}`}
-                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-slate-900/50 transition hover:-translate-y-1 hover:border-cyan-500/40"
+                className="group relative overflow-hidden rounded-3xl border border-blue-200 bg-blue-50/50 transition hover:-translate-y-1 hover:border-blue-400"
               >
                 <div className="relative h-44 overflow-hidden">
                   <img src={s.image} alt={s.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
-                  <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500 text-slate-950">
+                  <div className="absolute inset-0 bg-linear-to-t from-blue-50 to-transparent" />
+                  <div className="absolute left-5 top-5 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500 text-white">
                     <s.icon size={22} />
                   </div>
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-white">{s.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-400">{s.short}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-400">
+                  <h3 className="text-xl font-bold text-slate-900">{s.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-700">{s.short}</p>
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-500">
                     Learn more <ArrowRight size={14} className="transition group-hover:translate-x-1" />
                   </span>
                 </div>
@@ -155,23 +156,23 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" className="scroll-mt-20 border-b border-white/10 bg-slate-900/30 py-20 lg:py-28">
+      <section id="testimonials" className="scroll-mt-20 border-b border-blue-200 bg-blue-50/50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Testimonials</span>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Trusted by teams who ship</h2>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-500">Testimonials</span>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Trusted by teams who ship</h2>
           </div>
           <div className="mt-14 grid gap-6 md:grid-cols-2">
             {TESTIMONIALS.map((t) => (
-              <figure key={t.name} className="relative rounded-3xl border border-white/10 bg-slate-950/60 p-8">
-                <Quote className="absolute right-6 top-6 text-cyan-500/20" size={48} />
-                <div className="flex gap-1 text-cyan-400">
+              <figure key={t.name} className="relative rounded-3xl border border-blue-200 bg-white p-8">
+                <Quote className="absolute right-6 top-6 text-blue-200" size={48} />
+                <div className="flex gap-1 text-cyan-500">
                   {Array.from({ length: 5 }).map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
                 </div>
-                <blockquote className="mt-4 text-lg leading-relaxed text-slate-200">“{t.quote}”</blockquote>
-                <figcaption className="mt-6 border-t border-white/10 pt-4">
-                  <p className="font-semibold text-white">{t.name}</p>
-                  <p className="text-sm text-slate-400">{t.role}, {t.company}</p>
+                <blockquote className="mt-4 text-lg leading-relaxed text-slate-800">“{t.quote}”</blockquote>
+                <figcaption className="mt-6 border-t border-blue-200 pt-4">
+                  <p className="font-semibold text-slate-900">{t.name}</p>
+                  <p className="text-sm text-slate-700">{t.role}, {t.company}</p>
                 </figcaption>
               </figure>
             ))}
@@ -179,23 +180,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXECUTIVES */}
-      <section id="executives" className="scroll-mt-20 border-b border-white/10 py-20 lg:py-28">
+      <section id="executives" className="scroll-mt-20 border-b border-blue-200 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Executives</span>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Leadership that has been there</h2>
-            <p className="mt-4 text-slate-300">The people accountable for your success.</p>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-500">Executives</span>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Leadership that has been there</h2>
+            <p className="mt-4 text-slate-700">The people accountable for your success.</p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {EXECUTIVES.map((e) => (
-              <div key={e.name} className="group rounded-3xl border border-white/10 bg-slate-900/50 p-6 text-center transition hover:border-cyan-500/40">
-                <div className="mx-auto h-80 w-80 overflow-hidden rounded-full border border-white/10 bg-slate-950/50">
+              <div key={e.name} className="group rounded-3xl border border-blue-200 bg-blue-50/50 p-6 text-center transition hover:border-blue-400">
+                <div className="mx-auto h-80 w-80 overflow-hidden rounded-full border border-blue-200 bg-blue-100">
                   {e.image ? <img src={e.image} alt={e.name} /> : e.initials}
                 </div>
-                <h3 className="mt-4 font-bold text-white">{e.name}</h3>
-                <p className="text-sm font-medium text-cyan-400">{e.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">{e.bio}</p>
+                <h3 className="mt-4 font-bold text-slate-900">{e.name}</h3>
+                <p className="text-sm font-medium text-cyan-500">{e.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-700">{e.bio}</p>
               </div>
             ))}
           </div>
@@ -206,14 +206,14 @@ export default function Home() {
       <section id="contact" className="scroll-mt-20 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5">
           <div className="mx-auto max-w-2xl text-center">
-            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-400">Location & Contact</span>
-            <h2 className="mt-3 text-3xl font-bold text-white sm:text-4xl">Let's build something together</h2>
-            <p className="mt-4 text-slate-300">Tell us about your project and we'll respond within one business day.</p>
+            <span className="text-3xl font-semibold uppercase tracking-widest text-cyan-500">Location & Contact</span>
+            <h2 className="mt-3 text-3xl font-bold text-slate-900 sm:text-4xl">Let's build something together</h2>
+            <p className="mt-4 text-slate-700">Tell us about your project and we'll respond within one business day.</p>
           </div>
 
           <div className="mt-14 grid gap-10 lg:grid-cols-2">
             <div className="space-y-6">
-              <div className="overflow-hidden rounded-3xl border border-white/10">
+              <div className="overflow-hidden rounded-3xl border border-blue-200">
                 <iframe
                   title="Excelsis Softworks location"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=-0.13482660055160525%2C5.647112099015295%2C-0.13196736574172976%2C5.648780341479149&amp;layer=mapnik&amp;marker=5.647944886253705%2C-0.13339698314666748"
@@ -224,36 +224,36 @@ export default function Home() {
                 />
               </div>
               <ul className="space-y-4">
-                <li className="flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-900/50 p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400"><MapPin size={18} /></span>
+                <li className="flex items-start gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-cyan-500"><MapPin size={18} /></span>
                   <div>
-                    <p className="text-sm font-semibold text-white">Headquarters</p>
-                    <p className="text-sm text-slate-400">{COMPANY.address}</p>
+                    <p className="text-sm font-semibold text-slate-900">Headquarters</p>
+                    <p className="text-sm text-slate-700">{COMPANY.address}</p>
                   </div>
                 </li>
-                <li className="flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-900/50 p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400"><Phone size={18} /></span>
+                <li className="flex items-start gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-cyan-500"><Phone size={18} /></span>
                   <div>
-                    <p className="text-sm font-semibold text-white">Phone</p>
-                    <a href={`tel:${COMPANY.phone}`} className="text-sm text-slate-400 hover:text-cyan-300">{COMPANY.phone}</a>
+                    <p className="text-sm font-semibold text-slate-900">Phone</p>
+                    <a href={`tel:${COMPANY.phone}`} className="text-sm text-slate-700 hover:text-cyan-500">{COMPANY.phone}</a>
                   </div>
                 </li>
-                <li className="flex items-start gap-4 rounded-2xl border border-white/10 bg-slate-900/50 p-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400"><Mail size={18} /></span>
+                <li className="flex items-start gap-4 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-cyan-500"><Mail size={18} /></span>
                   <div>
-                    <p className="text-sm font-semibold text-white">Email</p>
-                    <a href={`mailto:${COMPANY.email}`} className="text-sm text-slate-400 hover:text-cyan-300">{COMPANY.email}</a>
+                    <p className="text-sm font-semibold text-slate-900">Email</p>
+                    <a href={`mailto:${COMPANY.email}`} className="text-sm text-slate-700 hover:text-cyan-500">{COMPANY.email}</a>
                   </div>
                 </li>
               </ul>
             </div>
 
-            <div className="rounded-3xl border border-white/10 bg-slate-900/50 p-7">
-              <p className="mb-6 text-sm text-slate-400 text-center">If you already have a project in mind, consider filling out the form below. We will reach out to you to iron out the details.</p>
-              <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdJwGwzyP6DK2cOurzhpV5uCvSszgO-kBGj7nVi7CW-fqkZgw/viewform?usp=header" className="mx-auto block items-center-safe rounded-full bg-cyan-500 px-6 py-3 mb-3 text-sm text-center font-semibold text-slate-950 shadow-lg shadow-cyan-500/25 transition hover:scale-105 hover:bg-cyan-400">
+            <div className="rounded-3xl border border-blue-200 bg-blue-50 p-7">
+              <p className="mb-6 text-sm text-slate-700 text-center">If you already have a project in mind, consider filling out the form below. We will reach out to you to iron out the details.</p>
+              <Link to="https://docs.google.com/forms/d/e/1FAIpQLSdJwGwzyP6DK2cOurzhpV5uCvSszgO-kBGj7nVi7CW-fqkZgw/viewform?usp=header" className="mx-auto block items-center-safe rounded-full bg-cyan-500 px-6 py-3 mb-3 text-sm text-center font-semibold text-white shadow-lg shadow-cyan-500/25 transition hover:scale-105 hover:bg-blue-700">
                 Fill Out Form
               </Link>
-              <p className="mb-6 text-sm text-slate-400 text-center">Or, you may contact us directly below and we'll get back to you within one business day.</p>
+              <p className="mb-6 text-sm text-slate-700 text-center">Or, you may contact us directly below and we'll get back to you within one business day.</p>
               <ContactForm />
             </div>
           </div>

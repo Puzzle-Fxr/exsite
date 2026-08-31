@@ -31,14 +31,14 @@ export default function ITIntegration() {
         features={['Salesforce certified', 'Real-time & batch sync', 'Zero-downtime migration', '24/7 monitoring']}
       />
 
-      <section className="border-b border-white/10 py-20">
+      <section className="border-b border-blue-200 py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Systems we connect</h2>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Systems we connect</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {integrations.map((i) => (
-              <div key={i.name} className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 transition hover:border-cyan-500/40">
-                <h3 className="text-lg font-bold text-cyan-300">{i.name}</h3>
-                <p className="mt-2 text-sm text-slate-400">{i.desc}</p>
+              <div key={i.name} className="rounded-2xl border border-blue-200 bg-blue-50/50 p-6 transition hover:border-blue-400">
+                <h3 className="text-lg font-bold text-cyan-500">{i.name}</h3>
+                <p className="mt-2 text-sm text-slate-700">{i.desc}</p>
               </div>
             ))}
           </div>
@@ -47,13 +47,13 @@ export default function ITIntegration() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Our integration capabilities</h2>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Our integration capabilities</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {capabilities.map((c) => (
-              <div key={c.title} className="rounded-2xl border border-white/10 bg-slate-950/60 p-6">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400"><c.icon size={20} /></div>
-                <h3 className="mt-4 font-semibold text-white">{c.title}</h3>
-                <p className="mt-2 text-sm text-slate-400">{c.desc}</p>
+              <div key={c.title} className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-cyan-500"><c.icon size={20} /></div>
+                <h3 className="mt-4 font-semibold text-slate-900">{c.title}</h3>
+                <p className="mt-2 text-sm text-slate-700">{c.desc}</p>
               </div>
             ))}
           </div>

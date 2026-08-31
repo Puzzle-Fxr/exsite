@@ -24,15 +24,15 @@ export default function AppCreation() {
         features={['iOS & Android', 'Offline-first architecture', 'App Store & Play launch', 'Crash-free 99.5%+']}
       />
 
-      <section className="border-b border-white/10 py-20">
+      <section className="border-b border-blue-200 py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <h2 className="text-2xl font-bold text-white sm:text-3xl">Platforms & capabilities</h2>
+          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl">Platforms & capabilities</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {platforms.map((c) => (
-              <div key={c.title} className="rounded-2xl border border-white/10 bg-slate-900/50 p-6 transition hover:border-cyan-500/40">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-400"><c.icon size={20} /></div>
-                <h3 className="mt-4 font-semibold text-white">{c.title}</h3>
-                <p className="mt-2 text-sm text-slate-400">{c.desc}</p>
+              <div key={c.title} className="rounded-2xl border border-blue-200 bg-blue-50/50 p-6 transition hover:border-blue-400">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-cyan-500"><c.icon size={20} /></div>
+                <h3 className="mt-4 font-semibold text-slate-900">{c.title}</h3>
+                <p className="mt-2 text-sm text-slate-700">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -41,12 +41,12 @@ export default function AppCreation() {
 
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-5">
-          <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 to-cyan-950/30 p-10">
-            <h2 className="text-2xl font-bold text-white">Our mobile stack</h2>
-            <p className="mt-2 text-slate-400">Battle-tested technologies we trust in production.</p>
+          <div className="rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 to-blue-100 p-10">
+            <h2 className="text-2xl font-bold text-slate-900">Our mobile stack</h2>
+            <p className="mt-2 text-slate-700">Battle-tested technologies we trust in production.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               {stack.map((s) => (
-                <span key={s} className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-200">{s}</span>
+                <span key={s} className="rounded-full border border-blue-300 bg-blue-100 px-4 py-2 text-sm font-medium text-blue-700">{s}</span>
               ))}
             </div>
           </div>
