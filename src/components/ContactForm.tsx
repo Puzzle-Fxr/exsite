@@ -21,13 +21,12 @@ export default function ContactForm() {
     }
 
     const formData = new FormData(e.currentTarget)
-    formData.append("access_key", "9c879c01-2db9-43cf-a29c-1f87161aac41")
     
     // Remove the honeypot field from email data so it doesn't look messy in your inbox
     formData.delete("botcheck") 
 
     try {
-      const response = await fetch("https://web3forms.com", {
+      const response = await fetch("https://formsubmit.co/excelsissoftworks@gmail.com.com", {
         method: "POST",
         body: formData
       })
