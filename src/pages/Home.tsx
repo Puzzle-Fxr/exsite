@@ -31,7 +31,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <PolarBearHeroBackground className="z-0 opacity-95" speed={1} respectReducedMotion={false} />
-          <div className="absolute inset-0 z-10 bg-linear-to-br from-white via-cyan-40/80 to-cyan-0" />
+          <div className="absolute inset-0 z-10 bg-linear-to-br from-white via-cyan-100/95 to-cyan-500/25" />
         </div>
         <div className="relative z-20 mx-auto max-w-7xl px-5 py-24 lg:py-36">
           <div className="max-w-3xl">
