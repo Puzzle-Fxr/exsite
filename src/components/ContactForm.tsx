@@ -20,7 +20,8 @@ export default function ContactForm() {
       return
     }
 
-    const formData = new FormData(e.currentTarget)
+    const formElement = e.currentTarget
+    const formData = new FormData(formElement)
     
     // Remove the honeypot field from email data so it doesn't look messy in your inbox
     formData.delete("botcheck") 
@@ -28,18 +29,18 @@ export default function ContactForm() {
     try {
       const response = await fetch("https://formsubmit.co/37a84d3df36d36db9cff6046fd83d023", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
 
-      const data = await response.json()
-
-      if (data.success) {
+      if (response.ok) {
         setSent(true)
         setForm({ name: '', email: '', company: '', message: '', botcheck: '' })
         setTimeout(() => setSent(false), 5000)
       } else {
-        // 2. Set error message from API response
-        setErrorMsg(data.message || 'Something went wrong. Please check your details and try again.')
+        setErrorMsg('Something went wrong. Please check your details and try again.')
       }
     } catch (error) {
       console.error('Submission error:', error)
